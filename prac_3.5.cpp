@@ -1,44 +1,42 @@
-#include<iostream>
-#include<string>
+
+ #include <iostream>
+#include <string>
+
 using namespace std;
-int st(string n,int k)
-{
-    if(n.length()==1)
-    {
-        return n[0]-'0';
+
+
+int superDigit(long long n) {
+    if (n < 10) return n;
+
+    long long sum = 0;
+    while (n > 0) {
+        sum += n % 10;
+        n /= 10;
     }
 
-    string mer="";
-    for(int i=0;i<k;i++)
-    {
-       mer=mer+n;
-    }
-    cout<<mer;
-
- long long p;
-    while(mer.length()!=1)
-    {
-        for(char i:mer)
-        {
-
-            p=p+i-'0';
-        }
-    }
-    return p;
-
+    return superDigit(sum);
 }
 
 
+int computeSuperDigit(string n, int k) {
+    long long digitSum = 0;
 
+  
+    for (char c : n) {
+        digitSum += c - '0';
+    }
 
-int main()
-{
-    string n;
-    int k;
-    cout<<"enter the string:";
-    cin>>n;
-    cout<<endl;
-    cout<<"enter the multiplying number:";
-    cin>>k;
-    cout<<endl<<st(n,k);
+    long long total = digitSum * k;
+
+    
+    return superDigit(total);
+}
+
+int main() {
+    string n = "9875";
+    int k = 4;
+
+    cout << computeSuperDigit(n, k) << endl;  // Output: 8
+
+    return 0;
 }
