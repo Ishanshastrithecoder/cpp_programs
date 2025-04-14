@@ -1,89 +1,59 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
-template<typename T>
-void disp(const vector<T>v)
-{
-    for(auto& i:v)
-    {
-        cout<< i;
-    }
-}
 
 template<typename T>
-T max(const vector<T>v)
-{
-    return *max_element(v.begin(),v.end());
+T findmax(const vector<T>& vec) {
+    T maxvalue = vec[0];
+    for (const auto& elem : vec) {
+        if (elem > maxvalue) {
+            maxvalue = elem;
+        }
+    }
+    return maxvalue;
 }
 
-template<typename T>
-void rev(vector<T>v)
-{
-    reverse(v.begin(),v.end());
-    for(auto& i:v)
-    {
-        cout<<i;
-    }
+template <typename T>
+void reversevector(vector<T>& vec) {
+    reverse(vec.begin(), vec.end());
 }
 
-int main()
-{
-   /* vector<int>iv={1,2,3,4,5};
-    disp(iv);
-    cout<<endl<<max(iv)<<endl;
-    rev(iv);
-    cout<<endl;
 
-    vector<char>ic={'a','b','c','d','e'};
-    disp(ic);
-    cout<<endl<<max(ic)<<endl;
-    rev(ic);
-    cout<<endl;
-
-     vector<float>ifl={1.50,2.30,3.40,4.50,5.60};
-    disp(ifl);
-    cout<<endl<<max(ifl)<<endl;
-    rev(ifl);*/
-
-
-    int n;
-    cout<<"enter the number of elements:";
-    cin>>n;
-    vector<int>iv(n);
-    for(int j=0;j<n;j++)
-    {
-       cin>>iv[j];
+template <typename T>
+void printvector(const vector<T>& vec) {
+    for (const auto& elem : vec) {
+        cout << elem << " ";
     }
-    disp(iv);
-    cout<<endl<<max(iv)<<endl;
-    rev(iv);
-    cout<<endl;
+    cout << endl;
+}
 
-    int k;
-    cout<<"enter the number of elements for string:";
-    cin>>k;
-    vector<char>ic(k);
-    for(int j=0;j<k;j++)
-    {
-       cin>>ic[j];
-    }
-    disp(ic);
-    cout<<endl<<max(ic)<<endl;
-    rev(ic);
-    cout<<endl;
+int main() {
+    vector<int> vec = {1, 2, 3, 4, 5};
+    cout << "The vector elements are: ";
+    printvector(vec);
+    cout << "Max value of the array is: " << findmax(vec) << endl;
+    reversevector(vec);
+    cout << "Reverse of array is: ";
+    printvector(vec);
 
-   /* double w;
-    cout<<"enter the number of elements for double:";
-    cin>>w;
-    vector<double>id(w);
-    for(int j=0;j<w;j++)
-    {
-       cin>>id[w];
-    }
-    disp(id);
-    cout<<endl<<max(id)<<endl;
-    rev(id);
-    cout<<endl;*/
+    vector<float> fvec = {1.8, 2.6, 3.9, 4.5, 5.6};
+    cout << "\nThe vector elements are: ";
+    printvector(fvec);
+    cout << "Max value of the array is: " << findmax(fvec) << endl;
+    reversevector(fvec);
+    cout << "Reverse of array is: ";
+    printvector(fvec);
+
+    vector<char> cvec = {'a', 'b', 'c'};
+    cout << "\nThe vector elements are: ";
+    printvector(cvec);
+    cout << "Max value of the array is: " << findmax(cvec) << endl;
+    reversevector(cvec);
+    cout << "Reverse of array is: ";
+    printvector(cvec);
+
+    return 0;
 }
