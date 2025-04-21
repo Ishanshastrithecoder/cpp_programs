@@ -31,7 +31,7 @@ void printvector(const vector<T>& vec) {
 }
 
 int main() {
-    vector<int> vec = {1, 2, 3, 4, 5};
+    vector<int> vec = {1, 2, 3, 4, 5}; // vector declaration
     cout << "The vector elements are: ";
     printvector(vec);
     cout << "Max value of the array is: " << findmax(vec) << endl;
