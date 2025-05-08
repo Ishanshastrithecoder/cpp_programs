@@ -59,9 +59,9 @@ class Student
     {
         Student s1;
         s1.displayDetails();
-        Student s2(101,"kunj");
+        Student s2(101,"ishan");
         s2.input();
         s2.avg();
-
+    cout<<"24ce115_Ishan";
     }
 
