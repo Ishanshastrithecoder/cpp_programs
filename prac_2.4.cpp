@@ -69,6 +69,8 @@ using namespace std;
         a1[i].increase();
         a1[i].decrease();
         a1[i].displayDetails();
+           
        }
+        cout<<"Ishan";
 
     }
