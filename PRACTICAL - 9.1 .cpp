@@ -43,6 +43,6 @@ int main() {
     cout << "\nLoan-to-Income Ratio : " << ratio << endl;
     cout << "Note: A lower ratio typically indicates better loan eligibility.\n";
 
-    cout << "24CE112_CHETAN" << endl ;
+    cout << "24ce115_Ishan" << endl ;
     return 0;
 }
