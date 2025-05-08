@@ -110,7 +110,7 @@ void nonStlApproach() {
 
     delete[] complexArray;  
 
-    cout << "24CE112_CHETAN" << endl ;
+    cout << "24CE115_Ishan" << endl ;
 }  
 
 int main() {  
