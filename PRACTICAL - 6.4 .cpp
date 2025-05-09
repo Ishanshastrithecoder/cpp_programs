@@ -27,6 +27,6 @@ int main() {
     Base* obj = new Derived();
     delete obj;
 
-    cout << "24CE112_CHETAN" << endl ;
+    cout << "24CE115_Ishan" << endl ;
     return 0;
 }
